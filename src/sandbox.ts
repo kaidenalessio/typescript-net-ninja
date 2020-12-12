@@ -1,3 +1,28 @@
+class Invoice {
+
+    constructor(
+        private client: string,
+        private details: string,
+        private amount: number
+    ) {}
+
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}.`;
+    }
+
+
+}
+
+const invOne = new Invoice('mario', 'work on the website', 9100);
+
+const invoices: Invoice[] = [];
+
+invoices.push(invOne);
+
+invoices.forEach(inv => {
+    console.log(inv.format());
+});
+
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
 const type = document.querySelector('#type') as HTMLSelectElement;
